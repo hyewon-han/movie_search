@@ -1,1 +1,32 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>최고 평점 영화 콜렉션</title>
+  </head>
+  <body>
+    <div class="title">내배캠 최고 평점 영화 콜렉션</div>
+    <div class="search">
+      <form>
+        <h2>영화 검색 :</h2>
+        <input type="text" placeholder="영화 제목을 검색해 보세요" />
+        <button>검색</button>
+      </form>
+    </div>
+    <div class="movie-cards">
+      <div class="movie-card">
+        <div>
+          <img src="#" class="movie-card__poster" />
+        </div>
+        <div class="movie-card__title">
+          <span class="movie-card__title">영화제목</span>
+        </div>
+        <div class="movie-card__overview">내용요약</div>
+        <div class="movie-card__vote-average">평점</div>
+      </div>
+    </div>
+    <script src="js/api.js"></script>
+  </body>
+</html>
