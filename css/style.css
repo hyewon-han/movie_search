@@ -1,19 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200&display=swap");
 @import "reset.css";
 @import "variables.css";
+@import "movie-card.css";
 
 body {
   font-family: "Noto Sans KR", sans-serif;
   height: 100vh;
 }
 
-.movie-card {
-  background-color: yellow;
-  width: 300px;
-  height: 700px;
-}
-
 img {
   width: 260px;
   height: 390px;
+}
+
+.title {
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+.title__text {
+  font-size: 32px;
+  font-weight: 1000;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+}
+
+.search__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
