@@ -1,5 +1,15 @@
 const movieCards = document.querySelector(".movie-cards");
+/*search.js
+const searchValue = document.getElementById("search__value");
+const searchBtn = document.querySelector(".search__btn");
 
+function handleSearch(e) {
+  e.preventDefault();
+  console.log(searchValue.value);
+}
+
+searchBtn.addEventListener("click", handleSearch);
+*/
 const options = {
   method: "GET",
   headers: {
@@ -21,6 +31,27 @@ fetch(
       addMovie(movie);
     });
   })
+  .then(() => {
+    const movieCard = movieCards.querySelectorAll(".movie-card");
+    const searchValue = document.getElementById("search__value");
+    const searchBtn = document.querySelector(".search__btn");
+
+    function handleSearch(e) {
+      e.preventDefault();
+      let value = searchValue.value;
+      console.log(searchValue.value);
+
+      movieCard.forEach((element) => {
+        element.classList.remove("hidden");
+        console.log(element.childNodes[2].childNodes[1].innerText);
+        let movieTitle = element.childNodes[2].childNodes[1].innerText;
+        if (!movieTitle.toLowerCase().includes(value)) {
+          element.classList.add("hidden");
+        }
+      });
+    }
+    searchBtn.addEventListener("click", handleSearch);
+  })
   .catch((err) => console.error(err));
 
 function addMovie(movie) {
@@ -38,5 +69,11 @@ function addMovie(movie) {
   <div class="movie-card__vote-average">Ratings : ${movie.vote_average}</div>
 </div>`;
   div.addEventListener("click", () => alert(`영화 id : ${movie.id}`));
+  // div.style = "display : block";
+  div.id = movie.id;
   movieCards.append(div);
 }
+
+// function searchMovie() {
+
+// }

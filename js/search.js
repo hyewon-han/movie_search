@@ -1,12 +1,9 @@
-const searchValue = document.getElementById("search__value");
-const searchBtn = document.querySelector(".search__btn");
-const title = document.querySelectorAll(".movie-card__title");
-console.log(title);
+// const searchValue = document.getElementById("search__value");
+// const searchBtn = document.querySelector(".search__btn");
 
-function handleSearch(e) {
-  e.preventDefault();
-  let value = searchValue.value;
-  console.log(value);
-}
+// function handleSearch(e) {
+//   e.preventDefault();
+//   console.log(searchValue.value);
+// }
 
-searchBtn.addEventListener("click", handleSearch);
+// searchBtn.addEventListener("click", handleSearch);
