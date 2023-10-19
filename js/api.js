@@ -55,7 +55,6 @@ function searchMovie() {
     let value = searchValue.value;
     movieCard.forEach((element) => {
       element.classList.remove("hidden");
-
       let movieTitle = element.childNodes[2].childNodes[1].innerText;
       // console.log(movieTitle);
       // console.log(value);
