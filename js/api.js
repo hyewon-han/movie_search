@@ -1,3 +1,5 @@
+const movieCards = document.querySelector(".movie-cards");
+
 const options = {
   method: "GET",
   headers: {
@@ -15,39 +17,26 @@ fetch(
   .then((response) => {
     console.log(response);
     const result = response.results;
-    // const base_url = "https://image.tmdb.org/";
-    // const file_size = "t/p/w500";
-    // const file_path = result["0"].poster_path;
-    // const movieTitle = document.querySelector(".movie-card__title");
-    // const moviePoster = document.querySelector(".movie-card__poster");
-
-    // movieTitle.innerText = result["0"].title;
-    // moviePoster.src = `${base_url}${file_size}${file_path}`;
-
-    // addMovie(result);
-    result.forEach((element) => {
-      console.log(element.title);
-      addMovie(element);
+    result.forEach((movie) => {
+      addMovie(movie);
     });
   })
   .catch((err) => console.error(err));
 
-const movieCards = document.querySelector(".movie-cards");
-
-function addMovie(element) {
+function addMovie(movie) {
   const base_url = "https://image.tmdb.org/";
   const file_size = "t/p/w500";
-  const file_path = element.poster_path;
+  const file_path = movie.poster_path;
   const div = document.createElement("div");
   div.classList.add("movie-card");
 
-  div.innerHTML = `<div>
-  <img src=${base_url}${file_size}${file_path} class="movie-card__poster" />
-</div>
-<div class="movie-card__title">
-  <span class="movie-card__title">${element.title}</span>
-</div>
-<div class="movie-card__overview">${element.overview}</div>
-<div class="movie-card__vote-average">${element.vote_average}</div>`;
+  div.innerHTML = `<div class="movie-card__poster">
+  <img src=${base_url}${file_size}${file_path} /></div>
+<div class="movie-card__content">
+  <div class="movie-card__title">${movie.title}</div>
+  <div class="movie-card__overview">${movie.overview}</div>
+  <div class="movie-card__vote-average">Ratings : ${movie.vote_average}</div>
+</div>`;
+  div.addEventListener("click", () => alert(`영화 id : ${movie.id}`));
   movieCards.append(div);
 }

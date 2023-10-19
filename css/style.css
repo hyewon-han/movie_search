@@ -2,15 +2,24 @@
 @import "reset.css";
 @import "variables.css";
 @import "movie-card.css";
+@import "search.css";
 
 body {
   font-family: "Noto Sans KR", sans-serif;
   height: 100vh;
+  background-color: var(--blue);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
 }
 
 img {
   width: 260px;
   height: 390px;
+  border-radius: 10px;
 }
 
 .title {
@@ -23,16 +32,4 @@ img {
 .title__text {
   font-size: 32px;
   font-weight: 1000;
-}
-.search {
-  display: flex;
-  justify-content: center;
-  height: 80px;
-}
-
-.search__form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
 }

@@ -1,13 +1,38 @@
 .movie-cards {
   display: grid;
   gap: 50px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 0px, auto;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  margin: 20px auto 10px auto;
 }
 
 .movie-card {
   background-color: var(--beige);
   box-shadow: var(--box-shadow);
+  border-radius: 10px;
   width: 300px;
   height: 700px;
+}
+
+.movie-card__poster {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+
+.movie-card__content {
+  margin: 0px 20px;
+}
+
+.movie-card__title {
+  font-size: large;
+  font-weight: bolder;
+}
+
+.movie-card__overview {
+  margin: 10px 0px;
+}
+
+.hidden {
+  display: none;
 }
