@@ -10,6 +10,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 
 .search__form input {
@@ -31,7 +32,18 @@
   height: 50px;
   padding: 10px;
   font-size: 15px;
+  font-weight: bold;
   background-color: var(--yellow);
   border-radius: 20px;
   border: none;
+  position: absolute;
+  right: -15px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.search__form button:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+  transform: scale(1.1);
 }
