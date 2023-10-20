@@ -62,3 +62,4 @@ function searchMovie() {
   }
   searchBtn.addEventListener("click", handleSearch);
 }
+test;
