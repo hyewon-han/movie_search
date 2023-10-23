@@ -7,13 +7,14 @@ export function searchMovie() {
 
   function handleSearch(e) {
     e.preventDefault();
-    let value = searchValue.value;
+    let value = searchValue.value.toLowerCase();
 
     movieCard.forEach((element) => {
       element.classList.remove("hidden");
-      let movieTitle = element.childNodes[2].childNodes[1].innerText;
+      let movieTitle =
+        element.childNodes[2].childNodes[1].innerText.toLowerCase();
 
-      if (!movieTitle.toLowerCase().includes(value.toLowerCase())) {
+      if (!movieTitle.includes(value)) {
         element.classList.add("hidden");
       }
     });
