@@ -18,4 +18,5 @@ export function searchMovie() {
     });
   }
   searchBtn.addEventListener("click", handleSearch);
+  searchValue.addEventListener("keyup", handleSearch);
 }
