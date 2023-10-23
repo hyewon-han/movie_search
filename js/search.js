@@ -8,6 +8,7 @@ export function searchMovie() {
   function handleSearch(e) {
     e.preventDefault();
     let value = searchValue.value;
+
     movieCard.forEach((element) => {
       element.classList.remove("hidden");
       let movieTitle = element.childNodes[2].childNodes[1].innerText;
@@ -18,5 +19,4 @@ export function searchMovie() {
     });
   }
   searchBtn.addEventListener("click", handleSearch);
-  searchValue.addEventListener("keyup", handleSearch);
 }
